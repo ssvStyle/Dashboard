@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;800&display=swap" rel="stylesheet">
     <title>Dashboard</title>
 </head>
 <body>
@@ -12,8 +12,15 @@
             <h1>Dashboard</h1>
             <div class="header__filter">
                 <p>Filter:</p>
-                <span>Shared domains</span>
-                <button>+</button>
+                <form action="" method="post" class="header__filter__form">
+                    <select>
+                        <option selected disabled>Shared domains</option>
+                        <option value="domain 1">domain 1</option>
+                        <option value="domain 2">domain 2</option>
+                        <option value="domain 3">domain 3</option>
+                    </select>
+                    <button type="submit" class="header__filter__button"></button>
+                </form>
             </div>
         </header>
         <main>

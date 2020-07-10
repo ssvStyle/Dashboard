@@ -1,0 +1,38 @@
+h1 {
+  @include fontStyle(#192A3E, normal, 500, 24px, 36px);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__filter {
+  display: flex;
+  align-items: center;
+  p {
+    color: $grey;
+    margin-right: 5px;
+  }
+  &__button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #0148F5;
+    @include bgImg(url("../images/plus.svg"), 18px, 18px, center);
+    box-shadow: 0px 4px 10px rgba(0, 75, 255, 0.24);
+    border-radius: 4px;
+  }
+  &__form {
+    display: flex;
+    select {
+      margin-right: 20px;
+      padding-right: 15px;
+      border: none;
+      background-color: inherit;
+      -webkit-appearance: none;
+      @include bgImg(url("../images/triangle.png"), 15px, 15px, right);
+      @include fontStyle($blue);
+    }
+  }
+}

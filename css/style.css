@@ -2,6 +2,16 @@ body {
   background: #E5E5E5;
   font-family: 'Poppins', sans-serif; }
 
+.container {
+  width: 1089px;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: black; }
+
 h1 {
   font-style: normal;
   font-weight: 500;
@@ -10,33 +20,50 @@ h1 {
   letter-spacing: 0.01em;
   color: #192A3E; }
 
-.container {
-  width: 1089px;
-  margin: 0 auto; }
-
-main {
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
-  border-radius: 5px;
-  background: #FFFFFF;
-  padding: 21px 32px; }
-
 header {
   display: flex;
   justify-content: space-between; }
 
 .header__filter {
   display: flex;
-  align-items: center;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
-  /* identical to box height */
-  letter-spacing: 0.01em; }
+  align-items: center; }
   .header__filter p {
     color: #6A707E;
     margin-right: 5px; }
-  .header__filter span {
-    color: #004BFF; }
+  .header__filter__button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #0148F5;
+    background-image: url("../images/plus.svg");
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 4px 10px rgba(0, 75, 255, 0.24);
+    border-radius: 4px; }
+  .header__filter__form {
+    display: flex; }
+    .header__filter__form select {
+      margin-right: 20px;
+      padding-right: 15px;
+      border: none;
+      background-color: inherit;
+      -webkit-appearance: none;
+      background-image: url("../images/triangle.png");
+      background-size: 15px 15px;
+      background-repeat: no-repeat;
+      background-position: right;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      color: #004BFF; }
+
+main {
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  background: #FFFFFF;
+  padding: 21px 32px; }
 
 /*# sourceMappingURL=style.css.map */

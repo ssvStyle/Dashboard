@@ -1,50 +1,29 @@
 $blue: #004BFF;
+$grey: #6A707E;
+
+@mixin fontStyle($color: black, $style: normal, $weight: normal, $size: 12px, $height: 18px, $spacing: 0.01em) {
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+  color: $color;
+}
+
+@mixin bgImg($url, $sizeV, $sizeH, $position, $repeat: no-repeat) {
+  background-image: $url;
+  background-size: $sizeV $sizeH;
+  background-repeat: $repeat;
+  background-position: $position;
+}
 
 body {
   background: #E5E5E5;
   font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: 0.01em;
-  color: #192A3E;
-}
-
 .container {
   width: 1089px;
   margin: 0 auto;
-}
-
-main {
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
-  border-radius: 5px;
-  background: #FFFFFF;
-  padding: 21px 32px ;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header__filter {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
-  /* identical to box height */
-  letter-spacing: 0.01em;
-  p {
-    color: #6A707E;
-    margin-right: 5px;
-  }
-  span {
-    color: $blue;
-  }
+  @include fontStyle();
 }
