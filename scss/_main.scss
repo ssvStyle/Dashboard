@@ -4,14 +4,82 @@ main {
   background: #FFFFFF;
   padding: 21px 32px ;
 }
-
-
-
-//}
-//  width: 0;
-//  height: 0;
-//  border-style: solid;
-//  border-width: 4px 4px 0 4px;
-//  border-color: #0aeaea transparent transparent transparent;
-//  margin-left: 8px;
-//}
+.main {
+  &__header {
+    h2 {
+      @include fontStyle(#000000, normal, 500, 15px, 22px);
+    }
+    border-bottom: $lightGrayLine;
+    &__settings {
+      img {
+        margin: 0 6px;
+        cursor: pointer;
+      }
+      img:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  &__content{
+    @include dFlexBetween(flex-start);
+    &__block {
+      width: 25%;
+      margin-top: 15px;
+      padding: 30px;
+      padding-top: 0;
+      &__title{
+        margin: 0;
+        @include fontStyle($grey, normal, 500, 11px, 16px);
+      }
+      &__score {
+        @include dFlexBetween($align: baseline);
+        p {
+          margin: 0;
+        }
+        p:first-child {
+          @include fontStyle(#2ED47A, normal, 500, 54px, 84px);
+        }
+        p:last-child {
+          @include fontStyle(#DD4C3A, normal, 500, 15px, 180%);
+          &:before {
+            content: '';
+            margin-right: 5px;
+            @include triangle(4px, #DD4C3A);
+            vertical-align: -12px;
+          }
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          @include dFlexBetween($align: baseline);
+        }
+        li p {
+          margin: 0;
+        }
+        li div {
+          display: flex;
+        }
+        span {
+          color: $blue;
+          margin-right: 8px;
+        }
+        @for $i from 0 to length($scoreColors) {
+          li:nth-child(#{$i+1}) {
+            color: nth($scoreColors, $i+1);
+            p:before {
+              content: '';
+              vertical-align: -10px;
+              margin-right: 5px;
+              @include triangle($color: nth($scoreColors, $i+1));
+            }
+          }
+        }
+      }
+    }
+    &__block:nth-child(-n+3) {
+      border-right: $lightGrayLine;
+    }
+  }
+}

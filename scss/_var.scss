@@ -1,5 +1,7 @@
 $blue: #004BFF;
 $grey: #6A707E;
+$lightGrayLine: 1px solid #EBEFF2;
+$scoreColors: (#DC4B3E, #F08D30, #22A4EE);
 
 @mixin fontStyle($color: black, $style: normal, $weight: normal, $size: 12px, $height: 18px, $spacing: 0.01em) {
   font-style: $style;
@@ -17,13 +19,27 @@ $grey: #6A707E;
   background-position: $position;
 }
 
+@mixin dFlexBetween($align: center, $justify: space-between){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin triangle($size: 4px, $color: #0aeaea) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size $size 0 $size;
+  border-color: $color transparent transparent transparent;
+}
+
 body {
   background: #E5E5E5;
   font-family: 'Poppins', sans-serif;
+  @include fontStyle();
 }
 
 .container {
   width: 1089px;
   margin: 0 auto;
-  @include fontStyle();
 }

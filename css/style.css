@@ -1,16 +1,16 @@
 body {
   background: #E5E5E5;
-  font-family: 'Poppins', sans-serif; }
-
-.container {
-  width: 1089px;
-  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.01em;
   color: black; }
+
+.container {
+  width: 1089px;
+  margin: 0 auto; }
 
 h1 {
   font-style: normal;
@@ -22,14 +22,15 @@ h1 {
 
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between; }
 
 .header__filter {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
   .header__filter p {
-    color: #6A707E;
-    margin-right: 5px; }
+    color: #6A707E; }
   .header__filter__button {
     width: 35px;
     height: 35px;
@@ -44,6 +45,7 @@ header {
   .header__filter__form {
     display: flex; }
     .header__filter__form select {
+      padding: 3px;
       margin-right: 20px;
       padding-right: 15px;
       border: none;
@@ -65,5 +67,115 @@ main {
   border-radius: 5px;
   background: #FFFFFF;
   padding: 21px 32px; }
+
+.main__header {
+  border-bottom: 1px solid #EBEFF2; }
+  .main__header h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: #000000; }
+  .main__header__settings img {
+    margin: 0 6px;
+    cursor: pointer; }
+  .main__header__settings img:last-of-type {
+    margin-right: 0; }
+.main__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; }
+  .main__content__block {
+    width: 25%;
+    margin-top: 15px;
+    padding: 30px;
+    padding-top: 0; }
+    .main__content__block__title {
+      margin: 0;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 16px;
+      letter-spacing: 0.01em;
+      color: #6A707E; }
+    .main__content__block__score {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between; }
+      .main__content__block__score p {
+        margin: 0; }
+      .main__content__block__score p:first-child {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 54px;
+        line-height: 84px;
+        letter-spacing: 0.01em;
+        color: #2ED47A; }
+      .main__content__block__score p:last-child {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 180%;
+        letter-spacing: 0.01em;
+        color: #DD4C3A; }
+        .main__content__block__score p:last-child:before {
+          content: '';
+          margin-right: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0 4px;
+          border-color: #DD4C3A transparent transparent transparent;
+          vertical-align: -12px; }
+    .main__content__block ul {
+      list-style: none;
+      padding: 0; }
+      .main__content__block ul li {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between; }
+      .main__content__block ul li p {
+        margin: 0; }
+      .main__content__block ul li div {
+        display: flex; }
+      .main__content__block ul span {
+        color: #004BFF;
+        margin-right: 8px; }
+      .main__content__block ul li:nth-child(1) {
+        color: #DC4B3E; }
+        .main__content__block ul li:nth-child(1) p:before {
+          content: '';
+          vertical-align: -10px;
+          margin-right: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0 4px;
+          border-color: #DC4B3E transparent transparent transparent; }
+      .main__content__block ul li:nth-child(2) {
+        color: #F08D30; }
+        .main__content__block ul li:nth-child(2) p:before {
+          content: '';
+          vertical-align: -10px;
+          margin-right: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0 4px;
+          border-color: #F08D30 transparent transparent transparent; }
+      .main__content__block ul li:nth-child(3) {
+        color: #22A4EE; }
+        .main__content__block ul li:nth-child(3) p:before {
+          content: '';
+          vertical-align: -10px;
+          margin-right: 5px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0 4px;
+          border-color: #22A4EE transparent transparent transparent; }
+  .main__content__block:nth-child(-n+3) {
+    border-right: 1px solid #EBEFF2; }
 
 /*# sourceMappingURL=style.css.map */

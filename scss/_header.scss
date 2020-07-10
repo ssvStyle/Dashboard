@@ -3,16 +3,13 @@ h1 {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  @include dFlexBetween;
 }
 
 .header__filter {
-  display: flex;
-  align-items: center;
+  @include dFlexBetween;
   p {
     color: $grey;
-    margin-right: 5px;
   }
   &__button {
     width: 35px;
@@ -26,6 +23,7 @@ header {
   &__form {
     display: flex;
     select {
+      padding: 3px;
       margin-right: 20px;
       padding-right: 15px;
       border: none;
