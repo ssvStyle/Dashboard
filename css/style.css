@@ -86,11 +86,13 @@ main {
   display: flex;
   align-items: flex-start;
   justify-content: space-between; }
+  .main__content__block:first-of-type {
+    width: 20%;
+    padding-left: 0; }
   .main__content__block {
-    width: 25%;
+    width: 26.6%;
     margin-top: 15px;
-    padding: 30px;
-    padding-top: 0; }
+    padding: 0 30px; }
     .main__content__block__title {
       margin: 0;
       font-style: normal;
@@ -135,7 +137,8 @@ main {
       .main__content__block ul li {
         display: flex;
         align-items: baseline;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin: 10px 0; }
       .main__content__block ul li p {
         margin: 0;
         display: flex;
