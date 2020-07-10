@@ -1,5 +1,7 @@
 $blue: #004BFF;
 $grey: #6A707E;
+$grayTopTriangle: #2fbd8b;
+$red: #DD4C3A;
 $lightGrayLine: 1px solid #EBEFF2;
 $scoreColors: (#DC4B3E, #F08D30, #22A4EE);
 
@@ -25,12 +27,19 @@ $scoreColors: (#DC4B3E, #F08D30, #22A4EE);
   justify-content: $justify;
 }
 
-@mixin triangle($size: 4px, $color: #0aeaea) {
+@mixin triangle($size: 4px, $color: #0aeaea, $direction: bottom) {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: $size $size 0 $size;
-  border-color: $color transparent transparent transparent;
+  @if $direction == top {
+    border-width: 0 $size $size $size;
+    border-color: transparent transparent $color transparent;
+  } @else {
+    border-width: $size $size 0 $size;
+    border-color: $color transparent transparent transparent;
+  }
+  margin-right: 6px;
+  align-self: center;
 }
 
 body {

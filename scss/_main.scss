@@ -35,17 +35,16 @@ main {
         @include dFlexBetween($align: baseline);
         p {
           margin: 0;
+          display: flex;
         }
         p:first-child {
           @include fontStyle(#2ED47A, normal, 500, 54px, 84px);
         }
         p:last-child {
-          @include fontStyle(#DD4C3A, normal, 500, 15px, 180%);
+          @include fontStyle($red, normal, 500, 15px, 180%);
           &:before {
             content: '';
-            margin-right: 5px;
-            @include triangle(4px, #DD4C3A);
-            vertical-align: -12px;
+            @include triangle($color: $red);
           }
         }
       }
@@ -57,6 +56,12 @@ main {
         }
         li p {
           margin: 0;
+          display: flex;
+          color: $red;
+          &:before {
+            content: '';
+            @include triangle($color: $red);
+          }
         }
         li div {
           display: flex;
@@ -68,11 +73,16 @@ main {
         @for $i from 0 to length($scoreColors) {
           li:nth-child(#{$i+1}) {
             color: nth($scoreColors, $i+1);
-            p:before {
-              content: '';
-              vertical-align: -10px;
-              margin-right: 5px;
-              @include triangle($color: nth($scoreColors, $i+1));
+          }
+          @if $i+1 == 2 {
+            li:nth-child(#{$i+1}) {
+              p {
+                color: $grayTopTriangle;
+              }
+              p:before {
+                content: '';
+                @include triangle($color: $grayTopTriangle, $direction: top);
+              }
             }
           }
         }
