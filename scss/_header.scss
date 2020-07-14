@@ -8,9 +8,6 @@ header {
 
 .header__filter {
   @include dFlexBetween;
-  p {
-    color: $grey;
-  }
   &__button {
     width: 35px;
     height: 35px;
@@ -21,7 +18,11 @@ header {
     border-radius: 4px;
   }
   &__form {
+    label {
+      color: $grey;
+    }
     display: flex;
+    align-items: center;
     select {
       padding: 3px;
       margin-right: 20px;

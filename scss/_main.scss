@@ -6,8 +6,25 @@ main {
 }
 .main {
   &__header {
+    &__logo {
+      a {
+        text-decoration: none;
+      }
+    }
     h2 {
       @include fontStyle(#000000, normal, 500, 15px, 22px);
+      display: flex;
+      align-items: center;
+    }
+    h2:before {
+      content: 'K';
+      text-align: center;
+      padding: 3px 8px;
+      @include fontStyle(#E5E5E5, normal, 800, 13px, 19px);
+      display: inline-block;
+      background-color: #000000;
+      border-radius: 50%;
+      margin-right: 10px;
     }
     border-bottom: $lightGrayLine;
     &__settings {
@@ -23,15 +40,102 @@ main {
   &__content{
     @include dFlexBetween(flex-start);
     &__block:first-of-type {
-      width: 20%;
       padding-left: 0;
+      @for $i from 0 to length($scoreColors) {
+        li:nth-child(#{$i+1}) {
+          color: nth($scoreColors, $i+1);
+        }
+        @if $i+1 == 2 {
+          li:nth-child(#{$i+1}) {
+            p {
+              color: $grayTopTriangle;
+            }
+            p:before {
+              content: '';
+              @include triangle($color: $grayTopTriangle, $direction: top);
+            }
+          }
+        }
+      }
+    }
+    &__block:nth-child(2) {
+      ul li div:first-of-type:before {
+        @include beforeCircle;
+      }
+      @for $i from 1 to 5{
+        ul li:nth-child(n+#{$i}) div:before {
+          opacity: $op;
+        }
+        @if ($i == 4) {
+          ul li:nth-child(n+#{$i}) div:before {
+            opacity: unset;
+            border: 2px solid rgba(221, 76, 58, 0.5);
+          }
+        }
+        $op: $op - 0.25;
+      }
+      ul li:nth-child(2) {
+        p {
+          color: $grayTopTriangle;
+        }
+        p:before {
+          content: '';
+          @include triangle($color: $grayTopTriangle, $direction: top);
+        }
+      }
+    }
+    &__block:nth-child(3) {
+      ul li {
+        display: block;
+        span {
+          margin: 0;
+        }
+      }
+      ul li:before {
+        content: '';
+        border-radius: 50%;
+        border: 2px solid #F18F1C;
+        box-sizing: border-box;
+        margin-right: 5px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+      ul li:last-of-type:before {
+        border-color: #27BE88;
+      }
+      p:last-of-type {
+        color: #707683;
+        margin: 10px 0;
+      }
+    }
+    &__block:nth-child(4) {
+      ul li:first-child {
+        p:before {
+          content: '';
+          @include triangle($color: $grayTopTriangle, $direction: top);
+        }
+        p {
+          color: $grayTopTriangle;
+        }
+      }
+      ul li div:first-of-type:before {
+        @include beforeCircle;
+      }
+      @for $i from 1 to 3{
+        $op: $op - 0.25;
+        ul li:nth-child(n+#{$i}) div:before {
+          opacity: $op;
+        }
+      }
     }
     &__block {
-      width: 26.6%;
+      width: 25%;
       margin-top: 15px;
       padding: 0 30px;
+      color: #334D6E;
       &__title{
         margin: 0;
+        margin-bottom: 20px;
         @include fontStyle($grey, normal, 500, 11px, 16px);
       }
       &__score {
@@ -41,7 +145,7 @@ main {
           display: flex;
         }
         p:first-child {
-          @include fontStyle(#2ED47A, normal, 500, 54px, 84px);
+          @include fontStyle(#2ED47A, normal, 500, 54px, 54px);
         }
         p:last-child {
           @include fontStyle($red, normal, 500, 15px, 180%);
@@ -52,11 +156,10 @@ main {
         }
       }
       ul {
-        list-style: none;
         padding: 0;
         li {
           @include dFlexBetween($align: baseline);
-          margin: 10px 0;
+          margin: 5px 0;
         }
         li p {
           margin: 0;
@@ -74,22 +177,6 @@ main {
           color: $blue;
           margin-right: 8px;
         }
-        @for $i from 0 to length($scoreColors) {
-          li:nth-child(#{$i+1}) {
-            color: nth($scoreColors, $i+1);
-          }
-          @if $i+1 == 2 {
-            li:nth-child(#{$i+1}) {
-              p {
-                color: $grayTopTriangle;
-              }
-              p:before {
-                content: '';
-                @include triangle($color: $grayTopTriangle, $direction: top);
-              }
-            }
-          }
-        }
       }
     }
     &__block:nth-child(-n+3) {
@@ -97,3 +184,4 @@ main {
     }
   }
 }
+

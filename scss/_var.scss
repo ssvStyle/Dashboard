@@ -4,6 +4,7 @@ $grayTopTriangle: #2fbd8b;
 $red: #DD4C3A;
 $lightGrayLine: 1px solid #EBEFF2;
 $scoreColors: (#DC4B3E, #F08D30, #22A4EE);
+$op:1;
 
 @mixin fontStyle($color: black, $style: normal, $weight: normal, $size: 12px, $height: 18px, $spacing: 0.01em) {
   font-style: $style;
@@ -40,6 +41,18 @@ $scoreColors: (#DC4B3E, #F08D30, #22A4EE);
   }
   margin-right: 6px;
   align-self: center;
+}
+
+@mixin beforeCircle() {
+  content: '';
+  padding: 1px;
+  border-radius: 50%;
+  border: 2px solid #004BFF;
+  box-sizing: border-box;
+  width: 1px;
+  height: 1px;
+  align-self: center;
+  margin-right: 5px;
 }
 
 body {
