@@ -1,21 +1,23 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    rigger = require('gulp-rigger');
 
-gulp.task('html', function () {
-    return gulp.src('index.html')
-        .pipe(gulp.dest('build'));
+gulp.task('myHtml', function () {
+    return gulp.src('src/*.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('app'));
 });
 
-gulp.task('css', function () {
-    return gulp.src('styles/style.css')
-        .pipe(gulp.dest('build/styles'));
+gulp.task('myCss', function () {
+    return gulp.src('src/css/style.css')
+        .pipe(postcss([autoprefixer]) )
+        .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('images', function () {
-    return gulp.src('images/*/*')
-        .pipe(gulp.dest('build/images'));
+gulp.task('myImages', function () {
+    return gulp.src('src/images/*/*')
+        .pipe(gulp.dest('app/images'));
 });
 
-gulp.task('font', function () {
-    return gulp.src('fonts/*')
-        .pipe(gulp.dest('build/fonts'));
-});
+gulp.task('myFinalBuild', gulp.series(['myHtml', 'myCss', 'myImages']));
