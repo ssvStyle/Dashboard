@@ -15,9 +15,14 @@ gulp.task('myCss', function () {
         .pipe(gulp.dest('app/css'));
 });
 
+gulp.task('js', function () {
+    return gulp.src('src/js/*')
+        .pipe(gulp.dest('app/js'));
+});
+
 gulp.task('myImages', function () {
     return gulp.src('src/images/*/*')
         .pipe(gulp.dest('app/images'));
 });
 
-gulp.task('myFinalBuild', gulp.series(['myHtml', 'myCss', 'myImages']));
+gulp.task('myFinalBuild', gulp.series(['myHtml', 'myCss', 'myImages', 'js']));
