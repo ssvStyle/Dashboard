@@ -38,7 +38,8 @@ main {
     }
   }
   &__content{
-    @include dFlexBetween(stretch);
+    //@include dFlexBetween(stretch);
+    display: flex;
     &__block:first-of-type {
       padding-left: 0;
       @for $i from 0 to length($scoreColors) {
@@ -109,6 +110,7 @@ main {
       }
     }
     &__block:nth-child(4) {
+      padding-right: 0px;
       ul li:first-child {
         p:before {
           content: '';
@@ -131,11 +133,14 @@ main {
     &__block {
       &:nth-child(2n+2) {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        div {
-          width: 80%;
-        }
+        flex-direction: column;
+      }
+      canvas {
+        width: 100%;
+      }
+      &__chart {
+          width: 90%;
       }
       width: 25%;
       margin-top: 15px;
