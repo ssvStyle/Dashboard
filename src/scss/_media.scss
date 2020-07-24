@@ -45,30 +45,41 @@ body {
         border-bottom: $lightGrayLine;
       }
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 599px) {
       flex-wrap: wrap;
       align-items: normal;
       &__block {
         padding: 0 10px;
         width: 90%;
+        &:nth-child(2n+2) {
+          padding: 0 10px;
+          width: 90%;
+        }
         &:nth-child(-n+3) {
           border-right: none;
           border-bottom: $lightGrayLine;
         }
+        &__chart {
+          width: 100%;
+        }
       }
     }
-    @media screen and (min-width: 501px) and (max-width: 895px) {
+    @media screen and (min-width: 600px) and (max-width: 970px) {
       flex-wrap: wrap;
       align-items: normal;
       &__block {
         width: 45%;
         padding: 0 15px;
+        &:nth-child(2n+2){
+          width: 45%;
+          padding: 0 15px;
+        }
       }
       &__block:nth-child(-n+4) {
         border-right: $lightGrayLine;
       }
     }
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1050px) {
       &__block {
         padding: 0 10px;
         &:first-of-type {
