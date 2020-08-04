@@ -29,6 +29,7 @@ $op:1;
 }
 
 @mixin triangle($size: 4px, $color: #0aeaea, $direction: bottom) {
+  content: '';
   width: 0;
   height: 0;
   border-style: solid;

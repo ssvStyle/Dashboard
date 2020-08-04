@@ -1,7 +1,6 @@
-let firstChart = document.getElementById('firstChart').getContext('2d');
-let secondChart = document.getElementById('secondChart').getContext('2d');
-
-let myChart = new Chart(firstChart, {
+const firstChart = document.querySelector('#firstChart').getContext('2d'),
+      secondChart = document.querySelector('#secondChart').getContext('2d'),
+      myChart = new Chart(firstChart, {
     type: 'line',
     data: {
         labels: ['', '', '', '', ''],
@@ -55,9 +54,8 @@ let myChart = new Chart(firstChart, {
             display: false
         }
     }
-});
-
-let myChartSecond = new Chart(secondChart, {
+}),
+      myChartSecond = new Chart(secondChart, {
     type: 'line',
     data: {
         labels: ['', '', '', '', ''],

@@ -31,9 +31,9 @@
                     <a href=""><h2>https://kparser.com</h2></a>
                 </div>
                 <div class="main__header__settings">
-                    <img src="images/icon/share.svg" alt="share">
-                    <img src="images/icon/settings.svg" alt="settings">
-                    <img src="images/icon/delete.svg" alt="delete">
+                    <button class="buttonSettings"><img src="images/icon/share.svg" alt="share"></button>
+                    <button class="buttonSettings"><img src="images/icon/settings.svg" alt="settings"></button>
+                    <button class="buttonSettings"><img src="images/icon/delete.svg" alt="delete"></button>
                 </div>
             </header>
             <section class="main__content">
@@ -44,19 +44,19 @@
                         <p>4%</p>
                     </section>
                     <ul>
-                        <li>Errors<div><span>22</span><p>12</p></div></li>
-                        <li>Warnings<div><span>15</span><p>15</p></div></li>
-                        <li>Notices <div><span>13</span><p>13</p></div></li>
+                        <li>Errors<div><span>22</span><p class="down">12</p></div></li>
+                        <li>Warnings<div><span>15</span><p class="up">15</p></div></li>
+                        <li>Notices <div><span>13</span><p class="down">13</p></div></li>
                     </ul>
                 </div>
                 <div class="main__content__block">
                     <div class="main__content__block__chart">
                         <p class="main__content__block__title">Rankings</p>
                         <ul>
-                            <li><div>Rank #1-3</div><div><span>10</span><p>12</p></div></li>
-                            <li><div>Rank #4-10</div><div><span>23</span><p>15</p></div></li>
-                            <li><div>Rank #11-100</div><div><span>47</span><p>13</p></div></li>
-                            <li><div>Non in top 100</div><div><span>3</span><p>14</p></div></li>
+                            <li><div>Rank #1-3</div><div><span>10</span><p class="down">12</p></div></li>
+                            <li><div>Rank #4-10</div><div><span>23</span><p class="up">15</p></div></li>
+                            <li><div>Rank #11-100</div><div><span>47</span><p class="down">13</p></div></li>
+                            <li><div>Non in top 100</div><div><span>3</span><p class="down">14</p></div></li>
                         </ul>
                     </div>
                     <canvas id="firstChart" height="80"></canvas>
@@ -75,8 +75,8 @@
                     <div class="main__content__block__chart">
                         <p class="main__content__block__title">Traffic</p>
                         <ul>
-                            <li><div>All traffic: </div><div><span>192 56</span><p>2%</p></div></li>
-                            <li><div>Organic traffic: </div><div><span>121 003</span><p>3%</p></div></li>
+                            <li><div>All traffic: </div><div><span>192 56</span><p class="up">2%</p></div></li>
+                            <li><div>Organic traffic: </div><div><span>121 003</span><p class="down">3%</p></div></li>
                         </ul>
                     </div>
                     <canvas id="secondChart" height="80"></canvas>

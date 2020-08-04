@@ -4,6 +4,12 @@ body {
   }
 }
 
+.buttonSettings {
+    background-color: unset;
+    border: 0;
+    padding: 0;
+}
+
 .header {
   @media screen and (max-width: 360px){
     align-items: baseline;

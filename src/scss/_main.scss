@@ -4,6 +4,19 @@ main {
   background: #FFFFFF;
   padding: 21px 32px ;
 }
+.down {
+  color: $red;
+  &:before {
+    @include triangle($color: $red);
+  }
+}
+.up {
+  color: $grayTopTriangle;
+  &:before {
+    @include triangle($color: $grayTopTriangle, $direction: top);
+  }
+
+}
 .main {
   &__header {
     &__logo {
@@ -38,23 +51,13 @@ main {
     }
   }
   &__content{
+    padding-top: 15px;
     display: flex;
     &__block:first-of-type {
       padding-left: 0;
       @for $i from 0 to length($scoreColors) {
         li:nth-child(#{$i+1}) {
           color: nth($scoreColors, $i+1);
-        }
-        @if $i+1 == 2 {
-          li:nth-child(#{$i+1}) {
-            p {
-              color: $grayTopTriangle;
-            }
-            p:before {
-              content: '';
-              @include triangle($color: $grayTopTriangle, $direction: top);
-            }
-          }
         }
       }
     }
@@ -73,15 +76,6 @@ main {
           }
         }
         $op: $op - 0.25;
-      }
-      ul li:nth-child(2) {
-        p {
-          color: $grayTopTriangle;
-        }
-        p:before {
-          content: '';
-          @include triangle($color: $grayTopTriangle, $direction: top);
-        }
       }
     }
     &__block:nth-child(3) {
@@ -110,15 +104,6 @@ main {
     }
     &__block:nth-child(4) {
       padding-right: 0px;
-      ul li:first-child {
-        p:before {
-          content: '';
-          @include triangle($color: $grayTopTriangle, $direction: top);
-        }
-        p {
-          color: $grayTopTriangle;
-        }
-      }
       ul li div:first-of-type:before {
         @include beforeCircle;
       }
@@ -143,7 +128,6 @@ main {
       &__chart {
           width: 80%;
       }
-      margin-top: 15px;
       padding: 0 30px;
       color: #334D6E;
       &__title{
@@ -162,10 +146,6 @@ main {
         }
         p:last-child {
           @include fontStyle($red, normal, 500, 15px, 180%);
-          &:before {
-            content: '';
-            @include triangle($color: $red);
-          }
         }
       }
       ul {
@@ -177,11 +157,6 @@ main {
         li p {
           margin: 0;
           display: flex;
-          color: $red;
-          &:before {
-            content: '';
-            @include triangle($color: $red);
-          }
         }
         li div {
           display: flex;
